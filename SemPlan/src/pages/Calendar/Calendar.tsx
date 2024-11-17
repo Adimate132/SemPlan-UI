@@ -36,6 +36,31 @@ export default function Calendar() {
     fetchEvents();
   }, []);
 
+  async function getTimeline() {
+    try {
+        if (!sessionStorage.getItem('token')) {
+            throw new Error('no token');
+        }
+        const token = sessionStorage.getItem('token')  
+        const res = await fetch('http://localhost:3000/generateTimeline', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({token})
+        });
+        if (!res.ok) {
+            const errorData = await res.json();
+            throw new Error(errorData);
+        }
+        const data = await res.json();
+        console.log(data);
+    }
+    catch(error) {
+        console.error(error);
+    }
+}
+
   return (
     <SignedIn>
       <div>
@@ -50,6 +75,7 @@ export default function Calendar() {
           events={events}
         />
       </div>
+      <button onClick={getTimeline}> generate timeline </button>
     </SignedIn>
   );
 }

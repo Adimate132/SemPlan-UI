@@ -17,6 +17,13 @@ export default function Home() {
         }
     }, [isSignedIn]);
 
+    async function handleUpload() {
+        const success = await uploadFile();
+        if (success) {
+            navigate('/calendar')
+        }
+    }
+
     const uploadFile = async () => {
         try {
           // Check if a file is selected
@@ -55,36 +62,14 @@ export default function Home() {
             console.error("File upload failed");
             alert('File upload failed.');
           }
+          return true;
         } catch (error) {
           console.error("Error uploading file:", error);
           alert('Error uploading file.');
         }
+        return false;
       };
-
-    async function getTimeline() {
-        try {
-            if (!sessionStorage.getItem('token')) {
-                throw new Error('no token');
-            }
-            const token = sessionStorage.getItem('token')  
-            const res = await fetch('http://localhost:3000/generateTimeline', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({token})
-            });
-            if (!res.ok) {
-                const errorData = await res.json();
-                throw new Error(errorData);
-            }
-            const data = await res.json();
-            console.log(data);
-        }
-        catch(error) {
-            console.error(error);
-        }
-    }
+  
 
     return(
         <>
@@ -96,9 +81,7 @@ export default function Home() {
                 <div className={styles['top']}>
                     <div className={styles['header-and-button']}>
                         <h1 className={styles['header-text']}>SemPlan</h1>
-                        
-                        
-                    
+       
                     </div>
                     
                 </div>
@@ -107,8 +90,9 @@ export default function Home() {
                 <SignOutButton />
                 <h2>profile: <UserButton /> </h2>
                 <input type="file" ref={fileRef}/>
-                <button onClick={uploadFile}> upload file </button>
-                <button onClick={getTimeline}> generate timeline </button>
+                <button onClick={handleUpload}> upload file </button>
+
+                
             </div>
         </SignedIn>
         </>
