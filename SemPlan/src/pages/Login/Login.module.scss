@@ -32,6 +32,11 @@
     border: none;
     font-size: 120%;
     cursor: pointer; /* Optional for better UX */
+
+    &:hover {
+        color: black; 
+        text-decoration: underline;
+      }
     
 }
 
@@ -119,4 +124,10 @@
     border-radius: 10px;
     margin-bottom: 10%;
     color: #fff; 
+
+
+    &:hover {
+        color: black; 
+        text-decoration: underline;
+      }
 }
