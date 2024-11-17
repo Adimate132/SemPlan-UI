@@ -1,29 +1,22 @@
-import styles from './Home.module.scss';
+import styles from './Home.module.scss'
 import { useNavigate } from 'react-router-dom';
 import { SignedIn, SignOutButton, UserButton } from "@clerk/clerk-react";
 import { useEffect, useRef } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import { useDropzone } from 'react-dropzone';
 
 export default function Home() {
     const fileRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
     const { isSignedIn } = useUser();
-<<<<<<< Updated upstream
     const {user} = useUser();
 
     // if user not signed in, return to login page
-=======
-
-    // Redirect to login if not signed in
->>>>>>> Stashed changes
     useEffect(() => {
         if (!isSignedIn) {
             navigate('/login');
         }
-    }, [isSignedIn, navigate]);
+    }, [isSignedIn]);
 
-<<<<<<< Updated upstream
     const uploadFile = async () => {
         try {
           // Check if a file is selected
@@ -67,46 +60,22 @@ export default function Home() {
       };
 
     return(
-=======
-    const {
-        acceptedFiles,
-        fileRejections,
-        getRootProps,
-        getInputProps,
-    } = useDropzone({
-        accept: { 'application/pdf': ['.pdf'] },
-        multiple: false, // Restrict to a single file
-    });
-
-    const acceptedFileItems = acceptedFiles.map(file => (
-        <li key={file.path}>
-            {file.path} - {file.size} bytes
-        </li>
-    ));
-
-    const fileRejectionItems = fileRejections.map(({ file, errors }) => (
-        <li key={file.path}>
-            {file.path} - {file.size} bytes
-            <ul>
-                {errors.map(e => (
-                    <li key={e.code}>{e.message}</li>
-                ))}
-            </ul>
-        </li>
-    ));
-
-    return (
->>>>>>> Stashed changes
         <>
-            <SignedIn>
+
+        <SignedIn>
+            <div>
+                {/* use bracket notation for class names */}
+
                 <div className={styles['top']}>
                     <div className={styles['header-and-button']}>
                         <h1 className={styles['header-text']}>SemPlan</h1>
-                        <UserButton />
+                        
+                        
+                    
                     </div>
+                    
                 </div>
 
-<<<<<<< Updated upstream
                 <h1 className={styles['someClass']}> from Home page </h1>
                 <SignOutButton />
                 <h2>profile: <UserButton /> </h2>
@@ -114,22 +83,6 @@ export default function Home() {
                 <button onClick={uploadFile}> upload file </button>
             </div>
         </SignedIn>
-=======
-                <section className={styles['dropzone-container']}>
-                    <div {...getRootProps({ className: styles['dropzone'] })}>
-                        <input {...getInputProps()} />
-                        <p>Drag 'n' drop some files here, or click to select files</p>
-                        <em>(Only PDF documents will be accepted)</em>
-                    </div>
-                    <aside>
-                        <h4>Accepted files</h4>
-                        <ul>{acceptedFileItems}</ul>
-                        <h4>Rejected files</h4>
-                        <ul>{fileRejectionItems}</ul>
-                    </aside>
-                </section>
-            </SignedIn>
->>>>>>> Stashed changes
         </>
-    );
+    )
 }
