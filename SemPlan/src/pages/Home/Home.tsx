@@ -7,7 +7,8 @@ import { useUser } from '@clerk/clerk-react';
 export default function Home() {
     const navigate = useNavigate();
     const { isSignedIn } = useUser();
-
+    console.log(useUser());
+    
     // if user not signed in, return to login page
     useEffect(() => {
         if (!isSignedIn) {
