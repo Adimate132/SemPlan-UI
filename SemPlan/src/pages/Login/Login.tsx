@@ -14,17 +14,28 @@ export default function Login() {
         }
     }, [isSignedIn]);
 
-    return(
-        <>
-            {/* this h1 is debug. */}
-            <h1 style={{backgroundColor: 'green'}}>  !!! may not see login contents if signed in !!! </h1>
-            <SignedOut>
-                <div>
-                    {/* use bracket notation for class names */}
-                    <h1 className={styles['someClass']}> from login page </h1>
-                    <SignInButton />
+    
+    
+    
+
+    return (
+        <div className={styles['Login-container']}>
+            <div className={styles['background']}>
+                <div className={styles['top']}>
+                    <div className={styles['header-and-button']}>
+                        <h1 className={styles['header-text']}>SemPlan</h1>
+                        
+                        <SignedOut>
+                             <SignInButton className={styles['sign-in-button']} />
+                        </SignedOut>
+                    
+                    </div>
+                    
                 </div>
-            </SignedOut>
-        </>
-    )
+
+                
+            </div>
+        </div>
+    );
 }
+    

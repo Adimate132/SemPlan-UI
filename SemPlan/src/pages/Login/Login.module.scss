@@ -1,3 +1,43 @@
+body {
+    overflow-y: auto;
+  }
+
+
+.Login-container {
+    // other styles
+}
+
+.background {
+    background: #99CCFF;
+}
+
+.top {
+    width: 100% ; /* Full width of the parent */
+    height: 12% ; /* Height of the rectangle */
+    background: rgba(47, 0, 255, 0.49); 
+}
+
+.header-and-button {
+    display: flex;
+    justify-content: space-between; // Aligns items on opposite ends
+    align-items: center; // Centers items vertically
+}
+
+.header-text {
+    padding-left: 10%; 
+}
+
+.sign-in-button {
+    color: black; 
+    border: none;  
+    font-size: 120%; ; 
+    background-color: transparent;
+    cursor: pointer; /* Optional for better UX */
+    padding-right: 10%;
+    padding-top: 1%; 
+    text-decoration: underline; 
+}
+
 .someClass {
-    color: blue;
+    // other styles
 }
