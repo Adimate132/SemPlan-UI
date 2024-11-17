@@ -1,43 +1,103 @@
-body {
-    overflow-y: auto;
-  }
-
+html, body {
+    height: 100%; /* Ensure the root elements cover the full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
 
 .Login-container {
-    // other styles
+    height: 100%; /* Extend to full height of its parent, which is body */
 }
 
 .background {
-    background: #99CCFF;
+    background-color: #99CCFF; /* Your desired background color */
+    min-height: 100vh; /* Minimum height to cover the full viewport */
+    width: 100%; /* Cover full width */
 }
 
 .top {
-    width: 100% ; /* Full width of the parent */
-    height: 12% ; /* Height of the rectangle */
+    width: 100%; /* Full width of the parent */
+    height: 12vh; /* Changed from % to vh for more consistent sizing */
     background: rgba(47, 0, 255, 0.49); 
 }
 
 .header-and-button {
     display: flex;
-    justify-content: space-between; // Aligns items on opposite ends
-    align-items: center; // Centers items vertically
+    justify-content: space-between; /* Aligns items on opposite ends */
+    align-items: center; /* Centers items vertically */
+    padding: 0 10%; /* Example padding on both sides */
 }
 
-.header-text {
-    padding-left: 10%; 
+.header-text, .sign-in-button {
+    background-color: transparent;
 }
 
 .sign-in-button {
-    color: black; 
-    border: none;  
-    font-size: 120%; ; 
-    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 120%;
     cursor: pointer; /* Optional for better UX */
-    padding-right: 10%;
-    padding-top: 1%; 
     text-decoration: underline; 
 }
 
-.someClass {
-    // other styles
+
+.Welcome {
+    padding-left: 8%;
+    padding-top: 4%;
+    font-size: 220%;
+}
+
+.At{
+    width: 30%; 
+    padding-left: 8%; 
+    font-size: 120%; 
+    padding-top: 3%; 
+}
+
+
+
+/* Container for both text and image */
+.content-container {
+    display: flex; /* Flexbox for side-by-side layout */
+    align-items: center; /* Align items vertically (if needed) */
+    justify-content: space-between; /* Add spacing if necessary */
+    
+}
+
+/* Container for text */
+.text-container {
+    flex: 1; /* Allow text to take up remaining space */
+    max-width: 120%; /* Optional: Limit text width */
+}
+
+/* Image styling */
+.img {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    max-width: 35%; /* Adjust width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5%; 
+    margin-top: 7%; 
+}
+
+.allow{
+    margin-top: 10%; 
+    margin-left: 5%;
+    font-size: 200%; 
+    font-weight: bold;
+}
+
+.One-is {
+    margin-top: 5%; 
+    margin-left: 10%; 
+    font-size: 140%; 
+}
+
+.Two-is{
+    margin-left: 10%; 
+    font-size: 140%; 
+}
+
+
+.Three-is{
+    margin-left: 10%; 
+    font-size: 140%; 
 }
