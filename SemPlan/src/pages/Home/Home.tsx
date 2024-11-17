@@ -36,7 +36,7 @@ export default function Home() {
       
           // Create FormData to send to the backend
           const formData = new FormData();
-          formData.set("pdf", file); // set the file
+          formData.set("file", file); // set the file
           formData.append("email", email); // Add the email
       
           // Send the file and email to the backend
@@ -47,6 +47,8 @@ export default function Home() {
       
           if (response.ok) {
             const data = await response.json();
+
+            sessionStorage.setItem('token', data.token);
             console.log("File uploaded successfully:", data);
             alert('File uploaded successfully!');
           } else {
@@ -58,6 +60,31 @@ export default function Home() {
           alert('Error uploading file.');
         }
       };
+
+    async function getTimeline() {
+        try {
+            if (!sessionStorage.getItem('token')) {
+                throw new Error('no token');
+            }
+            const token = sessionStorage.getItem('token')  
+            const res = await fetch('http://localhost:3000/generateTimeline', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({token})
+            });
+            if (!res.ok) {
+                const errorData = await res.json();
+                throw new Error(errorData);
+            }
+            const data = await res.json();
+            console.log(data);
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
 
     return(
         <>
@@ -81,6 +108,7 @@ export default function Home() {
                 <h2>profile: <UserButton /> </h2>
                 <input type="file" ref={fileRef}/>
                 <button onClick={uploadFile}> upload file </button>
+                <button onClick={getTimeline}> generate timeline </button>
             </div>
         </SignedIn>
         </>
