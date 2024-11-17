@@ -4,7 +4,7 @@
 }
 
 .background {
-    background-color: #99CCFF; /* Your desired background color */
+    background-color: white; /* Your desired background color */
     min-height: 100vh; /* Minimum height to cover the full viewport */
     width: 100%; /* Cover full width */
 }
@@ -19,19 +19,20 @@
     display: flex;
     justify-content: space-between; /* Aligns items on opposite ends */
     align-items: center; /* Centers items vertically */
-    padding: 0 10%; /* Example padding on both sides */
+    padding: 0 5%; /* Example padding on both sides */
 }
 
 .header-text, .sign-in-button {
     background-color: transparent;
+    color: #fff; 
 }
 
 .sign-in-button {
-    color: black;
+    color: #fff;
     border: none;
     font-size: 120%;
     cursor: pointer; /* Optional for better UX */
-    text-decoration: underline; 
+    
 }
 
 
@@ -42,8 +43,9 @@
 }
 
 .At{
-    width: 30%; 
+ 
     padding-left: 8%; 
+    margin-left: 2%; 
     font-size: 120%; 
     padding-top: 3%; 
 }
@@ -60,16 +62,25 @@
 
 /* Container for text */
 .text-container {
-    flex: 1; /* Allow text to take up remaining space */
-    max-width: 120%; /* Optional: Limit text width */
+    flex: 2; /* Allow text to take up remaining space */
+    border-color: black;
+    border-radius: 10px;
+    min-width: 50vw;
+    
+    
+    
+  
+    
+ 
 }
 
 /* Image styling */
 .img {
     flex-shrink: 0; /* Prevent image from shrinking */
-    max-width: 35%; /* Adjust width of the image */
+    max-width: 25vw; /* Adjust width of the image */
     height: auto; /* Maintain aspect ratio */
     margin-right: 5%; 
+    margin-left: 10%; 
     margin-top: 7%; 
 }
 
@@ -95,4 +106,17 @@
 .Three-is{
     margin-left: 10%; 
     font-size: 140%; 
+}
+
+
+
+.sign-in-button1{
+    margin-left: 38%; 
+    margin-top: 10%; 
+    font-size: 200%; 
+    background-color:rgba(47, 0, 255, 0.49) ;
+    border: none; 
+    border-radius: 10px;
+    margin-bottom: 10%;
+    color: #fff; 
 }

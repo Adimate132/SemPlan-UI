@@ -48,6 +48,14 @@ export default function Login() {
     <p className = {styles['One-is']}>Upload Your Syllabus: Securely upload your course syllabus through our user-friendly platform.</p>
     <p className = {styles['Two-is']}>Automatic Extraction: Our advanced chat model processes your syllabi to find and extract all key due dates and important events.</p>
     <p className = {styles['Three-is']}>Sync to Your Calendar: With just one click, add all your academic deadlines directly into your Google Calendar, perfectly organized.</p>
+            
+            
+    <SignedOut>
+    <SignInButton className={styles['sign-in-button1']}>
+        Start Planning Out !
+    </SignInButton>
+</SignedOut>
+
             </div>
         </div>
     ); 
