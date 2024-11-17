@@ -41,7 +41,7 @@ export default function Login() {
             At SemPlan, we understand the challenges of managing multiple class schedules and deadlines. Our tool simplifies your academic planning by automatically extracting due dates from your syllabi and syncing them directly to your Google Calendar. Stay organized and ahead of your academic commitments with ease!
         </p>
     </div>
-    <img src="../assets/landing graphic.svg" className={styles['img']} alt="icon" />
+    <img src="../assets/REAL landing icon.svg" className={styles['img']} alt="icon" />
     </div>
 
     <p className = {styles['allow']}>With SemPlan, you can: </p>

@@ -1,3 +1,17 @@
-.someClass {
-    color: red;
+
+.top {
+    width: 100%; /* Full width of the parent */
+    height: 12vh; /* Changed from % to vh for more consistent sizing */
+    background: rgba(47, 0, 255, 0.49); 
+}
+
+.header-and-button {
+    display: flex;
+    justify-content: space-between; /* Aligns items on opposite ends */
+    align-items: center; /* Centers items vertically */
+    padding: 0 10%; /* Example padding on both sides */
+}
+
+.header-text {
+    background-color: transparent;
 }
