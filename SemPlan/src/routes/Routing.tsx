@@ -6,7 +6,7 @@ export default function Routing() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="*" element={ <Navigate to="/home" /> } />
+                <Route path="*" element={ <Navigate to="/login" /> } />
                 <Route path="/home" element={ <Home /> } />
                 <Route path="/login" element={ <Login /> } />
             </Routes>
