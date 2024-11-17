@@ -1,10 +1,6 @@
 // global styles here
-body, html {
-  margin: 0px; 
-  padding: 0px;
-}
-
-
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 :root {
   // Color variables
   --primary: #2F00FF;
@@ -15,13 +11,32 @@ body, html {
   --font-primary: 'Karla', sans-serif;
   --font-secondary: 'Merriweather', serif;
 }
-
-// Apply global font styles
-body {
-  font-family: var(--font-primary); 
+body, html {
+  margin: 0px; 
+  padding: 0px;
+  h1 {
+    font-family: var(--font-primary); 
+  }
+  p {
+    font-family: var(--font-secondary); 
+  }
 }
+
+
+
+
+
 
 // Class for secondary font
 .font-secondary {
   font-family: var(--font-secondary); 
+}
+
+
+
+
+
+.cl-avatarImage{
+  min-width: 30px;
+  min-width: 30px;
 }
