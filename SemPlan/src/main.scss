@@ -4,13 +4,24 @@ body, html {
   padding: 0px;
 }
 
-:root { // variables
 
-  // placeholders
-  --primary: red;
-  --secondary: orange;
-  --accent: yellow;
-  --primary-font: "Time New Romans"
-  --secondary-font: "Sans"
+:root {
+  // Color variables
+  --primary: #2F00FF;
+  --secondary: #D4D;
+  --accent: #99CCFF;
+
+  // Font variables
+  --font-primary: 'Karla', sans-serif;
+  --font-secondary: 'Merriweather', serif;
 }
 
+// Apply global font styles
+body {
+  font-family: var(--font-primary); 
+}
+
+// Class for secondary font
+.font-secondary {
+  font-family: var(--font-secondary); 
+}
